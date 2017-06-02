@@ -21,9 +21,12 @@ class SpectralView: UIView {
         let context = UIGraphicsGetCurrentContext()
         
         self.drawSpectrum(context: context!)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
-        // We're drawing static labels every time through our drawRect() which is a waste.
-        // If this were more than a demo we'd take care to only draw them once.
+        // drawing labels will only be executed once if placed in init
         self.drawLabels(context: context!)
     }
     
